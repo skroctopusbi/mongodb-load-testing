@@ -39,9 +39,8 @@ async def by_aiohttp_concurrency(course_list,session):
         Submissions=Submissions+res['documents']
     return Submissions
 Start = datetime.datetime.now()
-#loop = asyncio.new_event_loop()
-#asyncio.set_event_loop(loop)
-asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+loop = asyncio.new_event_loop()
+asyncio.set_event_loop(loop)
 
 loop = asyncio.get_event_loop()
 session=aiohttp.ClientSession()
